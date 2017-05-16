@@ -23,8 +23,13 @@
 
       forward "/__ex_debug_toolbar__", ExDebugToolbar.Endpoint
     end
-
   ```
+  4. Add the phoenix instrumenter to your `config/dev.exs`
+  ```elixir
+  config :your_app, YourApp.Endpoint,
+    instrumenters: [ExDebugToolbar.Phoenix.Instrumenter]
+  ```
+
 # TODO
 - [ ] Plugs
   - [ ] Forward `__ex_debug_toolbar__` path requests to `ExDebugToolbar.Endpoint`
